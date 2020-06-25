@@ -32,7 +32,6 @@ p {
 */
 
 .navbar {
-  border-bottom: 0.1rem solid #222831;
   justify-content: space-between;
   padding: 1rem;
   flex-wrap: wrap;
@@ -62,19 +61,20 @@ p {
 .navbar .show-nav {
   display: flex;
 }
+
 @media screen and (max-width: 414px) {
   .navbar-nav {
     display: none;
     flex-direction: column;
+    height: 15vh;
+    width: 100%;
     align-items: flex-end;
     justify-content: flex-start;
-    width: 100%;
+    padding: 0.5rem 0;
     position: absolute;
-    padding-top: 1rem;
     left: 0;
     top: 5.1rem;
-    background: #fff;
-    height: 100%;
+    background: #222831;
   }
 
   .navbar-nav li {
@@ -83,15 +83,80 @@ p {
   }
 
   .navbar-nav a {
+    color: #fff;
     font-size: 1rem;
   }
 
-  .toggle-icon span {
-    width: 2rem;
-    height: 0.2rem;
-    margin-bottom: 0.6rem;
-    border-radius: 10rem;
-    background-color: #393e46;
+  // .toggle-icon span {
+  //   width: 2rem;
+  //   height: 0.2rem;
+  //   margin-bottom: 0.6rem;
+  //   border-radius: 10rem;
+  //   background-color: #393e46;
+  //   display: block;
+  // }
+  #toggle-icon {
+    width: 3rem;
+    height: 2rem;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  #toggle-icon span {
     display: block;
+    position: absolute;
+    height: 0.2rem;
+    width: 3rem;
+    background: #222831;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #toggle-icon span:nth-child(1) {
+    top: 0px;
+  }
+
+  #toggle-icon span:nth-child(2) {
+    top: 18px;
+  }
+
+  #toggle-icon span:nth-child(3) {
+    top: 36px;
+  }
+
+  #toggle-icon.open span:nth-child(1) {
+    top: 18px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  #toggle-icon.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+
+  #toggle-icon.open span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
   }
 }

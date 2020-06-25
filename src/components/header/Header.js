@@ -6,6 +6,7 @@ class Header extends Component {
   };
   toggleIcon = () => {
     document.querySelector('.navbar-nav').classList.toggle('show-nav');
+    document.querySelector('#toggle-icon').classList.toggle('open');
   };
   render() {
     return (
@@ -15,7 +16,11 @@ class Header extends Component {
             <a href='#top'>JM</a>
             <p className='title'>Developer</p>
           </div>
-          <div className='toggle-icon' onClick={this.toggleIcon}>
+          <div
+            className='toggle-icon'
+            onClick={this.toggleIcon}
+            id='toggle-icon'
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -32,7 +37,7 @@ class Header extends Component {
             </li>
           </ul>
         </nav>
-        <h1>Hello, World</h1>
+        <h1>Jordan Myers</h1>
       </header>
     );
   }
