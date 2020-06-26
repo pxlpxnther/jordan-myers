@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom';
 class Navbar extends Component {
   toggleIcon = () => {
     document.querySelector('.navbar-nav').classList.toggle('show-nav');
@@ -9,7 +9,7 @@ class Navbar extends Component {
     return (
       <nav className='container navbar flex-container' id='top'>
         <div className='navbar-logo flex-container'>
-          <a href='#top'>JM</a>
+          <Link to='/'>JM</Link>
           <p className='title'>
             hey<span>@</span>jordanmyers.ca
           </p>
@@ -21,13 +21,20 @@ class Navbar extends Component {
         </div>
         <ul className='navbar-nav flex-container'>
           <li>
-            <a href='#top'>Portfolio</a>
+            <Link to='/' onClick={this.toggleIcon}>
+              Home
+            </Link>
+          </li>
+          {/* <li>
+            <Link to='/portfolio'>Portfolio</Link>
+          </li> */}
+          <li>
+            <Link to='/about' onClick={this.toggleIcon}>
+              About
+            </Link>
           </li>
           <li>
-            <a href='#top'>About</a>
-          </li>
-          <li>
-            <a href='#top'>Blog</a>
+            <Link to='/blog'>Blog</Link>
           </li>
         </ul>
       </nav>
