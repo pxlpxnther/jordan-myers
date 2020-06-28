@@ -15,6 +15,9 @@ const Home = () => (
       <h3>Featured</h3>
       <div className='feature'></div>
     </section>
+    <section className='home clients container'>
+      <h3>Clients</h3>
+    </section>
   </div>
 );
 
